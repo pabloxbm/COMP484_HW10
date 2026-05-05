@@ -20,7 +20,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
   })
   
     // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
-    var pet_info = {name:"Waddles", weight:8, happiness:10, hygiene: 75};
+    var pet_info = {name:"Waddles", weight:15, happiness:10, hygiene: 75};
 
     // variable to keep track of pet comments
     var mood = "Hi I'm Waddles!";
@@ -47,9 +47,13 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       mood = text;
     }
     function clickedTreatButton() {
+      console.log("Feeding Waddles.")
       $('.pet-image').finish();
+      $('.pet-image-container').finish();
       $('.pet-image').animate({height: ["200px","linear"]}, 100);
+      $('.pet-image-container').animate({paddingBottom: ["150px", "linear"]}, 100);
       $('.pet-image').animate({height: ["350px","linear"]}, 100);
+      $('.pet-image-container').animate({paddingBottom: ["0px", "linear"]}, 100);
       // Increase pet happiness
       pet_info.happiness += 3;
       // Increase pet weight
@@ -61,40 +65,61 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     }
     
     function clickedPlayButton() {
-      $('.pet-image').finish();
-      $('.pet-image').animate({width: ["200px","linear"]}, 100);
-      $('.pet-image').animate({width: ["400px","linear"]}, 100);
-      // Increase pet happiness
-      pet_info.happiness += 2;
-      // Decrease pet weight
-      pet_info.weight -= 2;
-      // Decrease pet hygiene
-      pet_info.hygiene -= 5;
-      updateMood("Fun! :)");
-      checkAndUpdatePetInfoInHtml();
+      if(pet_info.weight > 0){
+        // console.log("Playing with Waddles.");
+        $('.pet-image').finish();
+        $('.pet-image-container').finish();
+        $('.pet-image').animate({width: ["200px","linear"]}, 100);
+        $('.pet-image').animate({width: ["400px","linear"]}, 100);
+        // Increase pet happiness
+        pet_info.happiness += 2;
+        // Decrease pet weight
+        pet_info.weight -= 2;
+        // Decrease pet hygiene
+        pet_info.hygiene -= 5;
+        updateMood("Fun! :)");
+        checkAndUpdatePetInfoInHtml();
+        if(pet_info.weight <= 6){
+          console.warn("Pet Weight is very Low!");
+        }
+      }else{
+        console.error("Pet Weigth is 0");
+      }
     }
     
     function clickedExerciseButton() {
-      $('.pet-image').finish();
-      $('.pet-image').animate({width: ["200px","linear"]}, 100);
-      $('.pet-image').animate({width: ["400px","linear"]}, 100);
-      $('.pet-image').animate({width: ["200px","linear"]}, 100);
-      $('.pet-image').animate({width: ["400px","linear"]}, 100);
-      // Decrease pet happiness
-      pet_info.happiness -= 3;
-      // Decrease pet weight
-      pet_info.weight -= 5;
-      // Decrease pet hygiene
-      pet_info.hygiene -= 10;
-      updateMood("Tiring :(")
-      checkAndUpdatePetInfoInHtml();
+      if(pet_info.weight > 0){
+        // console.log("Exercising with Waddles.");
+        $('.pet-image').finish();
+        $('.pet-image-container').finish();
+        $('.pet-image').animate({width: ["200px","linear"]}, 100);
+        $('.pet-image').animate({width: ["400px","linear"]}, 100);
+        $('.pet-image').animate({width: ["200px","linear"]}, 100);
+        $('.pet-image').animate({width: ["400px","linear"]}, 100);
+        // Decrease pet happiness
+        pet_info.happiness -= 3;
+        // Decrease pet weight
+        pet_info.weight -= 5;
+        // Decrease pet hygiene
+        pet_info.hygiene -= 10;
+        updateMood("Tiring :(")
+        checkAndUpdatePetInfoInHtml();
+        if(pet_info.weight <= 10){
+          console.warn("Pet Weight is very Low!");
+        }
+      }else{
+        console.error("Pet Weigth is 0");
+      }
     }
 
     
     function clickedWashButton() {
       $('.pet-image').finish();
-      $('.pet-image').animate({height: ["toggle", "swing"]}, 100);
-      $('.pet-image').animate({height: ["toggle", "swing"]}, 100);
+        $('.pet-image-container').finish();
+      $('.pet-image').animate({height: ["3px", "swing"]}, 100);
+      $('.pet-image-container').animate({paddingBottom: ["347px", "swing"]}, 100);
+      $('.pet-image-container').animate({paddingBottom: ["0px", "swing"]}, 100);
+      $('.pet-image').animate({height: ["350px", "swing"]}, 100);
       // Decrease pet happiness
       pet_info.happiness -= 5;
       // reset pet hygiene
