@@ -51,9 +51,9 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       $('.pet-image').finish();
       $('.pet-image-container').finish();
       $('.pet-image').animate({height: ["200px","linear"]}, 100);
-      $('.pet-image-container').animate({paddingBottom: ["150px", "linear"]}, 100);
+      $('.pet-image-container').animate({paddingBottom: ["160px", "linear"]}, 100);
       $('.pet-image').animate({height: ["350px","linear"]}, 100);
-      $('.pet-image-container').animate({paddingBottom: ["0px", "linear"]}, 100);
+      $('.pet-image-container').animate({paddingBottom: ["10px", "linear"]}, 100);
       // Increase pet happiness
       pet_info.happiness += 3;
       // Increase pet weight
@@ -117,8 +117,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       $('.pet-image').finish();
         $('.pet-image-container').finish();
       $('.pet-image').animate({height: ["3px", "swing"]}, 100);
-      $('.pet-image-container').animate({paddingBottom: ["347px", "swing"]}, 100);
-      $('.pet-image-container').animate({paddingBottom: ["0px", "swing"]}, 100);
+      $('.pet-image-container').animate({paddingBottom: ["353px", "swing"]}, 100);
+      $('.pet-image-container').animate({paddingBottom: ["10px", "swing"]}, 100);
       $('.pet-image').animate({height: ["350px", "swing"]}, 100);
       // Decrease pet happiness
       pet_info.happiness -= 5;
