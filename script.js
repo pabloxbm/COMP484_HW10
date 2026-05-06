@@ -96,6 +96,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       // Increase pet happiness
       pet_info.happiness += 3;
       // Increase pet weight
+      // pet_info.weight = parseInt(pet_info.weight)+ parseInt('2');
       pet_info.weight += '2';
       // Decrease pet hygiene
       pet_info.hygiene -= 1;
